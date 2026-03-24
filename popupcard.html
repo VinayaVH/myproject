@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Popup Invitation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Open Button */
+.open-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background: #ff4b5c;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Background */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    animation: popupAnim 0.6s ease;
+}
+
+@keyframes popupAnim {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h2 {
+    color: #ff4b5c;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #243b55;
+    margin: 10px 0;
+}
+
+/* Close Button */
+.close-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    background: #243b55;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<button class="open-btn" onclick="openPopup()">Open Invitation 💌</button>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>You're Invited 🎉</h2>
+        <p>Hosted by</p>
+        <div class="name">Vinaya v h </div>
+        <p>Join us for a Special Event</p>
+        <p><b>Date:</b> 28 February</p>
+        <p><b>Time:</b> 6:00 PM</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
